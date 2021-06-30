@@ -35,6 +35,6 @@ function changeSlide(direction) {
   const height = container.clientHeight
 
   mainSlide.style.transform = `translateY(-${activeSlideIndex * height}px)`
-}
 
-console.log('sdf')
+  sidebar.style.transform = `translateY(${activeSlideIndex * height}px)`
+}
