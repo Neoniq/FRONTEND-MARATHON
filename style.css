@@ -13,7 +13,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(ellipse at bottom, #87e0fd 0%, #01262b 55%);
+  background: radial-gradient(ellipse at bottom, #754f46 0%, #43595c 55%);
 }
 
 .container {
@@ -56,4 +56,28 @@ body {
 .slide.active h3 {
   opacity: 1;
   transition: opacity 0.3s ease-in 0.4s;
+}
+
+h1 {
+  background: #111;
+}
+
+a {
+  border-radius: 55px;
+  background: rgba(0, 0, 0, 0.1);
+  float: left;
+  display: block;
+  margin: 10px;
+  padding: 10px 15px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  /* border-right: 1px solid #111; */
+  flex-wrap: wrap;
+}
+
+a:hover {
+  background: rgba(0, 0, 0, 0.2);
+  color: rgb(192, 231, 253);
+  transform: rotateZ(1deg);
 }
