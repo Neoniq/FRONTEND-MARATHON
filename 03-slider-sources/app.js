@@ -1,48 +1,48 @@
-const upBtn = document.querySelector('.up-button')
-const downBtn = document.querySelector('.down-button')
-const sidebar = document.querySelector('.sidebar')
-const mainSlide = document.querySelector('.main-slide')
-const slidesCount = mainSlide.querySelectorAll('div').length
-const container = document.querySelector('.container')
+const upBtn = document.querySelector('.up-button');
+const downBtn = document.querySelector('.down-button');
+const sidebar = document.querySelector('.sidebar');
+const mainSlide = document.querySelector('.main-slide');
+const slidesCount = mainSlide.querySelectorAll('div').length;
+const container = document.querySelector('.container');
 
-let activeSlideIndex = 0
+let activeSlideIndex = 0;
 
-sidebar.style.top = `-${(slidesCount - 1) * 100}vh`
+sidebar.style.top = `-${(slidesCount - 1) * 100}vh`;
 
 upBtn.addEventListener('click', () => {
-  console.log('up')
-  changeSlide('up')
-})
+  console.log('up');
+  changeSlide('up');
+});
 
 downBtn.addEventListener('click', () => {
-  console.log('down')
-  changeSlide('down')
-})
+  console.log('down');
+  changeSlide('down');
+});
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowUp') {
-    changeSlide('up')
+    changeSlide('up');
   } else if (event.key === 'ArrowDown') {
-    changeSlide('down')
+    changeSlide('down');
   }
-})
+});
 
 function changeSlide(direction) {
   if (direction === 'up') {
-    activeSlideIndex++
+    activeSlideIndex++;
     if (activeSlideIndex === slidesCount) {
-      activeSlideIndex = 0
+      activeSlideIndex = 0;
     }
   } else if (direction === 'down') {
-    activeSlideIndex--
+    activeSlideIndex--;
     if (activeSlideIndex < 0) {
-      activeSlideIndex = slidesCount - 1
+      activeSlideIndex = slidesCount - 1;
     }
   }
 
-  const height = container.clientHeight
+  const height = container.clientHeight;
 
-  mainSlide.style.transform = `translateY(-${activeSlideIndex * height}px)`
+  mainSlide.style.transform = `translateY(-${activeSlideIndex * height}px)`;
 
-  sidebar.style.transform = `translateY(${activeSlideIndex * height}px)`
+  sidebar.style.transform = `translateY(${activeSlideIndex * height}px)`;
 }
